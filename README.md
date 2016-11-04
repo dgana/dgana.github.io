@@ -6,22 +6,12 @@ Begitu juga dengan portfolio saya sewaktu menjadi Videographer.
 ## Used Tags & Sintaxes
 
 Isi dari website diatas terdiri dari beberapa bahasa pemrograman, markup, & framework:
- * HTML5  
-   ```html
-  	<header>, <nav>, <body>, <footer>, <div>, <span>, .... 
-   ```
- * CSS3
-	```css
-  	margin, padding, border, width, height, background, color.....
-   ```
- * Javascript 
-    ```javascript
-    functions({ }), if else, selectors, ....
-    ```
- * [jQuery](http://jquery.com/) 1.12.4 &nbsp;&nbsp; **(Javascript Library)**  
- 
- 
- * [Bootstrap](http://www.getbootstrap.com/) 3.3.7 &nbsp;&nbsp; **(Bootstrap Framework)**  
+
+ - HTML5  &nbsp; ```<header>, <nav>, <body>, <footer>, <div>, <span>, .... ```
+ - CSS3 &nbsp; ```margin, padding, border, width, height, background, color.....```
+ - Javascript &nbsp; ```functions({ }), if else, selectors, ....```
+ - [jQuery](http://jquery.com/) 1.12.4 &nbsp; **(Javascript Library)**  
+ - [Bootstrap](http://www.getbootstrap.com/) 3.3.7 &nbsp; **(Bootstrap Framework)**  
 
 ## About Me
 
