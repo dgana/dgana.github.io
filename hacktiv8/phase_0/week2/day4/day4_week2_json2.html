@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Ida Bagus Chahya Dhegana | JSON 2">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Day 4 Week 2</title>
+</head>
+<body>
+<script>
+var Teman = function(nama, kabar, pekerjaan) {
+	this.nama           = nama;
+	this.kabar          = kabar;
+	this.pekerjaan      = pekerjaan;
+	this.sapa           = function (nama) {
+		return console.log("Halo "+nama+", apa kabar?");
+	}
+	this.balasSapa      = function (nama) {
+		return console.log("Halo "+nama+", kabarku "+this.kabar);
+	}
+	this.tanyaPekerjaan = function () {
+		return console.log("Apa pekerjaanmu saat ini? ");
+	} 
+	this.balasPekerjaan = function () {
+		return console.log("Pekerjaanku saat ini adalah "+this.pekerjaan);
+	}
+	this.berpisah       = function () {
+		return console.log("Senang bertemu denganmu "+tono.nama+", semoga kamu sukses sebagai "+tono.pekerjaan);
+	}
+}
+
+var budi = new Teman('Budi', 'baik', 'developer');
+var tono = new Teman('Tono', 'baik', 'chef');
+
+budi.sapa(tono.nama);
+tono.balasSapa(budi.nama);
+budi.tanyaPekerjaan();
+tono.balasPekerjaan();
+budi.berpisah(tono);
+</script>
+</body>
+</html>

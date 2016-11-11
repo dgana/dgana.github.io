@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="description" content="Ida Bagus Chahya Dhegana | JSON 1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Day 4 Week 2</title>
+</head>
+<body>
+<script>
+var Mobil = function(pabrikan, model, warna) {
+		this.pabrikan = pabrikan;
+		this.model    = model;
+		this.warna    = warna;
+		this.maju     = function(){
+			return console.log("Mobil "+this.pabrikan+" "+this.model+" "+this.warna+" Bergerak Maju!");
+		}
+}
+		
+var mobilku = new Mobil('Tesla', 'Ludicrous', 'Merah');
+mobilku.maju();
+
+
+var mobil1 = new Mobil('Honda', 'Accord', 'Hitam');
+var mobil2 = new Mobil('Honda', 'Civic', 'Silver');
+
+console.log('Mobil 1 adalah '+mobil1.pabrikan+" "+mobil1.model+" "+ mobil1.warna);
+mobil1.maju();
+mobil1.warna = 'Silver';
+mobil1.maju();
+console.log('Mobil 2 adalah '+mobil2.pabrikan+" "+mobil2.model+" "+ mobil2.warna);
+mobil2.maju();
+
+
+</script>
+</body>
+</html>

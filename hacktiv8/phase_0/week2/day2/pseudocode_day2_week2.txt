@@ -1,0 +1,25 @@
+
+TUGAS 1
+
+BACA dan SIMPAN "Angka Pertama"
+BACA dan SIMPAN "Angka Kedua"
+HITUNG "Angka Pertama dikalikan Angka Kedua"
+SIMPAN hasil hitungan sebelummnya
+TULISKAN hasil hitungan
+
+Tugas 2
+
+BACA dan SIMPAN "Sebuah Kata"
+IF "Sebuah Kata" = "Saya Belajar JavaScript!" MAKA
+  TULISKAN "Pasti Bisa!"
+ENDIF
+
+Tugas 3
+
+BACA dan SIMPAN "Angka Pertama"
+i = 1
+ULANGI 
+  JIKA i modulus 3 = 0
+    TAMPILKAN "i"
+  i = i + 1
+SAMPAI "Angka Pertama" = "i"
