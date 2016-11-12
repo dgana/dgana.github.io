@@ -7,8 +7,8 @@
   <title>Day 5 Week 2</title>
 </head>
 <body>
-<h1>Game Babu & Jongos</h2>
-<kbd>cmd+shift+c or ctrl+shift+c</kbd>
+<h1>Babu & Jongos</h2>
+<kbd>Cmd+Alt+J or Ctrl+Shift+J on Google Chrome to see the action!</kbd>
 <script>
 var nama1 = {
 	nama  : "Babu",
@@ -42,7 +42,7 @@ var player2 = new player(array[1].nama, array[0].nama, 1000);
 
 console.log("Selamat datang "+array[0].nama+" dengan class "+array[0].peran+",\ndan "+array[1].nama+" dengan class "+array[1].peran+"\nPertarungan dimulai!!\n\n");
 
-for(var i = 1; i <= 1000; i++){
+for(var i = 1; i <= 10000; i++){
 	
 	if(i % player1.att === 0 && i % player2.def > 15){
 		player2.defend();
