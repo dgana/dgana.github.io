@@ -2,8 +2,6 @@ var button = document.getElementById('start-game')
 
 button.addEventListener('click', function(e) {
     var playerClass = input[0].value;
-    console.log(pickMap);
-    console.log(main);
 
     if (playerClass === '') {
         alert('Please Pick a Character');
@@ -204,7 +202,17 @@ button.addEventListener('click', function(e) {
     createSpecialAttackSound.setAttribute('autoplay', 'true');
     main.appendChild(createSpecialAttackSound);
 
+    var createHitSound = document.createElement('audio');
+    createHitSound.setAttribute('autoplay', 'true');
+    main.appendChild(createHitSound);
 
+    var createCounterSound = document.createElement('audio');
+    createCounterSound.setAttribute('autoplay', 'true');
+    main.appendChild(createCounterSound);
+
+    var createFinishHimSound = document.createElement('audio');
+    createFinishHimSound.setAttribute('autoplay', 'true');
+    main.appendChild(createFinishHimSound);
 
 
     // Create Game Logic
@@ -305,9 +313,20 @@ button.addEventListener('click', function(e) {
                             monsterHealthProgress.setAttribute('value', currentMonsterHealth);
                             monsterHealthStatus.innerHTML = monster.health + ' / ' + currentMonsterHealth;
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+
                         }, 1800);
 
-
+                        setTimeout(function() {
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+                        }, 2050);
 
                         currentPlayerHealth -= monster.attack
                         currentMonsterHealth -= player.attack;
@@ -338,10 +357,19 @@ button.addEventListener('click', function(e) {
                             hitDamage[1].style.opacity = '1';
                             hitDamage[1].style.bottom = '30px';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+
                             hitDamage[0].innerHTML = (player.attack - monster.defend) + ' dmg!';
 
                             monsterHealthProgress.setAttribute('value', currentMonsterHealth);
                             monsterHealthStatus.innerHTML = monster.health + ' / ' + currentMonsterHealth;
+
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
 
                         }, 1800);
 
@@ -375,13 +403,26 @@ button.addEventListener('click', function(e) {
                             hitDamage[1].innerHTML = monster.specialAttack + ' dmg!';
                             hitDamage[0].innerHTML = player.attack + ' dmg!';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+
                             playerHealthProgress.setAttribute('value', currentPlayerHealth);
                             playerHealthStatus.innerHTML = player.health + ' / ' + currentPlayerHealth;
 
                             monsterHealthProgress.setAttribute('value', currentMonsterHealth);
                             monsterHealthStatus.innerHTML = monster.health + ' / ' + currentMonsterHealth;
 
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+
                         }, 1800);
+
+                        setTimeout(function() {
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+                        }, 2050);
 
                         currentPlayerHealth -= monster.specialAttack
                         currentMonsterHealth -= player.attack;
@@ -507,8 +548,17 @@ button.addEventListener('click', function(e) {
 
                             hitDamage[1].innerHTML = (monster.attack - player.defend) + ' dmg!';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+
                             playerHealthProgress.setAttribute('value', currentPlayerHealth);
                             playerHealthStatus.innerHTML = player.health + ' / ' + currentPlayerHealth;
+
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
 
                         }, 1800);
 
@@ -531,6 +581,13 @@ button.addEventListener('click', function(e) {
                         playerTextStatus.innerHTML = "You both are defending!";
                         // monsterTextStatus.innerHTML = "The " + playerClass + " is defending also "
 
+                        if (monsterHealthProgress.getAttribute('value') < 400) {
+                            createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                        }
+                        if (playerHealthProgress.getAttribute('value') < 400) {
+                            createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                        }
+
                     }, 500);
                 }
                 if (i === 2) {
@@ -550,8 +607,18 @@ button.addEventListener('click', function(e) {
 
                             hitDamage[0].innerHTML = player.specialAttack + ' dmg!';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+                            createCounterSound.setAttribute('src', 'audio/headshot.mp3');
+
                             monsterHealthProgress.setAttribute('value', currentMonsterHealth);
                             monsterHealthStatus.innerHTML = monster.health + ' / ' + currentMonsterHealth;
+
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
 
                         }, 1800);
 
@@ -598,7 +665,6 @@ button.addEventListener('click', function(e) {
             hitDamage[0].innerHTML = '';
             hitDamage[1].innerHTML = '';
         }, 4000);
-
 
         // Reset Damage
         warrior.attack = Math.floor((Math.random() * 101) + 300);
@@ -678,12 +744,25 @@ button.addEventListener('click', function(e) {
                             hitDamage[1].innerHTML = monster.attack + ' dmg!';
                             hitDamage[0].innerHTML = player.specialAttack + ' dmg!';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+
                             playerHealthProgress.setAttribute('value', currentPlayerHealth);
                             playerHealthStatus.innerHTML = player.health + ' / ' + currentPlayerHealth;
 
                             monsterHealthProgress.setAttribute('value', currentMonsterHealth);
                             monsterHealthStatus.innerHTML = monster.health + ' / ' + currentMonsterHealth;
+
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
                         }, 1800);
+
+                        setTimeout(function() {
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+                        }, 2050);
 
                         currentPlayerHealth -= monster.attack;
                         currentMonsterHealth -= player.specialAttack;
@@ -712,14 +791,22 @@ button.addEventListener('click', function(e) {
 
                             hitDamage[1].innerHTML = monster.specialAttack + ' dmg!';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+                            createCounterSound.setAttribute('src', 'audio/headshot.mp3');
+
                             playerHealthProgress.setAttribute('value', currentPlayerHealth);
                             playerHealthStatus.innerHTML = player.health + ' / ' + currentPlayerHealth;
+
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
 
                         }, 1800);
 
                         currentPlayerHealth -= monster.specialAttack;
-
-
 
                         playerTextStatus.innerHTML = "Received " + monster.specialAttack + " counter damage from the Hulk!";
                         monsterTextStatus.innerHTML = "<img src='img/special-attack1-new.png' width='45px' alt='Special Attack Icon' />: " +
@@ -748,13 +835,26 @@ button.addEventListener('click', function(e) {
                             hitDamage[1].innerHTML = monster.specialAttack + ' dmg!';
                             hitDamage[0].innerHTML = player.specialAttack + ' dmg!';
 
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+
                             playerHealthProgress.setAttribute('value', currentPlayerHealth);
                             playerHealthStatus.innerHTML = player.health + ' / ' + currentPlayerHealth;
 
                             monsterHealthProgress.setAttribute('value', currentMonsterHealth);
                             monsterHealthStatus.innerHTML = monster.health + ' / ' + currentMonsterHealth;
 
+                            if (monsterHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+                            if (playerHealthProgress.getAttribute('value') < 400) {
+                                createFinishHimSound.setAttribute('src', 'audio/alert.mp3');
+                            }
+
                         }, 1800);
+
+                        setTimeout(function() {
+                            createHitSound.setAttribute('src', 'audio/punch.mp3');
+                        }, 2050);
 
                         currentPlayerHealth -= monster.specialAttack
                         currentMonsterHealth -= player.specialAttack;
@@ -800,7 +900,6 @@ button.addEventListener('click', function(e) {
             hitDamage[0].innerHTML = '';
             hitDamage[1].innerHTML = '';
         }, 4000);
-
 
         // Reset Damage
         warrior.attack = Math.floor((Math.random() * 101) + 300);

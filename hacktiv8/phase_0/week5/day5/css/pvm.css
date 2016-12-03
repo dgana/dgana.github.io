@@ -1,19 +1,19 @@
 .background-arena {
-    background: url('img/arena3.jpg');
+    background: url('../img/arena3.jpg');
     background-size: cover;
     height: 100%;
     width: 100%;
 }
 
 .background-arena1 {
-    background: url('img/arena1-filter.png');
+    background: url('../img/arena1-filter.png');
     background-size: cover;
     height: 100%;
     width: 100%;
 }
 
 .background-arena3 {
-    background: url('img/arena2-filter.png');
+    background: url('../img/arena2-filter.png');
     background-size: cover;
     height: 100%;
     width: 100%;

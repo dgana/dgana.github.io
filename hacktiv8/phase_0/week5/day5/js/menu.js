@@ -43,17 +43,17 @@ characterBox[0].appendChild(createParagraph);
 
 // Buat tag p yang merupakan child dari div dengan class character-box
 var createParagraph = document.createElement('p');
-createParagraph.innerHTML = 'Attack: <em>150-200 dmg</em>';
+createParagraph.innerHTML = 'Attack: <em>300 - 400 dmg</em>';
 characterBox[0].appendChild(createParagraph);
 
 // Buat tag p kedua yang merupakan child dari div dengan class character-box
 createParagraph = document.createElement('p');
-createParagraph.innerHTML = 'Defend: <em>50-100 dmg</em>';
+createParagraph.innerHTML = 'Defend: <em>50 - 100 block dmg</em>';
 characterBox[0].appendChild(createParagraph);
 
 // Buat tag p ketiga yang merupakan child dari div dengan class character-box
 createParagraph = document.createElement('p');
-createParagraph.innerHTML = 'Special Attack: <em>200-300 dmg</em>';
+createParagraph.innerHTML = 'Special Attack: <em>450 - 750 dmg</em>';
 characterBox[0].appendChild(createParagraph);
 
 // Buat tag div kedua dengan class character-img-box yang merupakan child dari div dengan class character-box
@@ -68,17 +68,17 @@ characterBox[1].appendChild(createParagraph);
 
 // Buat tag p yang merupakan child dari div dengan class character-box 2
 createParagraph = document.createElement('p');
-createParagraph.innerHTML = 'Attack: <em>200 - 400 dmg</em>';
+createParagraph.innerHTML = 'Attack: <em>400 - 700 dmg</em>';
 characterBox[1].appendChild(createParagraph);
 
 // Buat tag p kedua yang merupakan child dari div dengan class character-box 2
 createParagraph = document.createElement('p');
-createParagraph.innerHTML = 'Defend: <em>25 - 50 dmg</em>';
+createParagraph.innerHTML = 'Defend: <em>25 - 50 block dmg</em>';
 characterBox[1].appendChild(createParagraph);
 
 // Buat tag p ketiga yang merupakan child dari div dengan class character-box 2
 createParagraph = document.createElement('p');
-createParagraph.innerHTML = 'Special Attack: <em>350 - 600 dmg</em>';
+createParagraph.innerHTML = 'Special Attack: <em>800 - 1200 dmg</em>';
 characterBox[1].appendChild(createParagraph);
 
 // Buat tag img didalam character-img-box
@@ -107,7 +107,7 @@ map.appendChild(createImageBox);
 var imageBox = document.getElementsByClassName('image-box')[0];
 var createImage1 = document.createElement('img');
 createImage1.setAttribute('id', 'image-arena1');
-createImage1.setAttribute('src', 'img/arena1.jpg');
+createImage1.setAttribute('src', 'img/arena1-filter.png');
 createImage1.setAttribute('alt', 'Arena 1');
 imageBox.appendChild(createImage1);
 
@@ -119,7 +119,7 @@ imageBox.appendChild(createImage2);
 
 var createImage3 = document.createElement('img');
 createImage3.setAttribute('id', 'image-arena3');
-createImage3.setAttribute('src', 'img/arena2.jpg');
+createImage3.setAttribute('src', 'img/arena2-filter.png');
 createImage3.setAttribute('alt', 'Arena 3');
 imageBox.appendChild(createImage3);
 
@@ -154,13 +154,13 @@ createListItem.appendChild(createListItemText);
 
 // Buat tag li 3 didalam tag ul
 createListItem = document.createElement('li')
-var createListItemText = document.createTextNode('Defending will give you an advantage if the monster uses special attack. You will counter with your special attack!');
+var createListItemText = document.createTextNode('Defending will give you an advantage if the monster uses special attack. You will counter the attack!');
 unorderedList[0].appendChild(createListItem);
 createListItem.appendChild(createListItemText);
 
 // Buat tag li 4 didalam tag ul
 createListItem = document.createElement('li')
-var createListItemText = document.createTextNode('Special attack will give you an advantage when the monster attacks! you received attack damage but you will give the highest damage!');
+var createListItemText = document.createTextNode('Special attack will give you an advantage when the monster attack! you received attack damage but you will give the highest damage!');
 unorderedList[0].appendChild(createListItem);
 createListItem.appendChild(createListItemText);
 
