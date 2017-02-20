@@ -1,0 +1,50 @@
+SIMPAN 'objek pertama' dengan PROPERTY NAMA 'sebuah nama' dan PROPERTY PERAN 'sebuah peran' pada 'nama1'
+SIMPAN 'objek kedua' dengan PROPERTY NAMA 'sebuah nama' dan PROPERTY PERAN 'sebuah peran' pada 'nama2'
+SIMPAN array kosong pada `array`
+TAMBAHKAN 'nama1' dan 'nama2' pada 'array'
+
+SIMPAN 'objek ketiga' menerima 3 PARAMETER 'nama','musuh','health' pada 'player'
+  PROPERTY nama <- 'nama'
+  PROPERTY musuh <- 'musuh'
+  PROPERTY health <- 'health'
+  PROPERTY att <- 'angka bulat antara 1-100'
+  PROPERTY def <- 'angka bulat antara 1-100'
+  METHOD attack menerima PARAMETER 'sisa' RETURN 'sebuah teks menampilkan nama penyerang, angka att, dan sisa health musuh'
+  METHOD defend RETURN 'sebuah teks menampilkan nama dan musuh yang melakukan block serangan'
+
+SIMPAN sebuah instansiasi 'player' menerima 3 ARGUMEN pada 'player1'
+SIMPAN sebuah instansiasi 'player' menerima 3 ARGUMEN pada 'player2'
+
+TAMPILKAN 'sebuah text menampilkan selamat datang pada nama dan musuh beserta peran masing-masing'
+
+FOR setiap pertambahan 1 pada `index1` dari 0 sampai 1000:
+
+  IF `index` modulus 'att player1' adalah 0 dan `index` modulus 'def player2' lebih besar dari 'sebuah angka'
+    TAMPILKAN sebuah METHOD defend pada 'player2'
+    SIMPAN 'def player2' <- 'angka bulat antara 1-100'
+  ELSE IF `index` modulus 'att player1' adalah 0
+    SIMPAN 'health player2' = 'health player2' - 'att player1' pada 'sisa'
+    TAMPILKAN sebuah METHOD attack dengan PARAMETER 'sisa' pada 'player1'
+    SIMPAN 'att player1' <- 'angka bulat antara 1-100'
+  END IF
+  
+  IF `index` modulus 'att player2' adalah 0 dan `index` modulus 'def player1' lebih besar dari 'sebuah angka'
+    TAMPILKAN sebuah METHOD defend pada 'player1'
+    SIMPAN 'def player1' <- 'angka bulat antara 1-100'
+  ELSE IF `index` modulus 'att player2' adalah 0
+    SIMPAN 'health player1' = 'health player1' - 'att player2' pada 'sisa'
+    TAMPILKAN sebuah METHOD attack dengan PARAMETER 'sisa' pada 'player2'
+    SIMPAN 'att player2' <- 'angka bulat antara 1-100'
+  END IF
+  
+  IF `health player1` lebih kecil dari 0
+    TAMPILKAN maaf 'nama player1' kalah dalam pertarungan
+    BREAK
+  END IF
+  
+  IF `health player2` lebih kecil dari 0
+    TAMPILKAN maaf 'nama player2' kalah dalam pertarungan
+    BREAK
+  END IF
+  
+END FOR
